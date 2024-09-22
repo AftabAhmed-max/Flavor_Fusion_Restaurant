@@ -1,2 +1,2 @@
-# Flavouur_Fusion_Restaurant
+# Flavour_Fusion_Restaurant
 A website for Flavour Fusion Restaurant
