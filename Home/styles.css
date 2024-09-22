@@ -1,7 +1,117 @@
 :root {
-    --ora: #D57C3A;   /* Terracotta */
-    --gre: #7D8B4A;  /* Olive Green */
-    --lav: #B89A8E;  /* Muted Taupe */
-    --red: #A0522D;    /* Rusty Red */
-    --cre: #F4E1C1;   /* Soft Cream */
+  --off-white: #F5F5F5;
+  --dark-gray: rgb(51, 51, 51);
+  --mid-gray: #666666;
+  --light-gray: #CCCCCC;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--off-white);
+  color: var(--dark-gray);
+}
+
+/* Header Section */
+
+header {
+  height: 115px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 200px;
+  background-image: url('../Static/background.webp');
+  background-position: top;
+  background-size: cover;
+}
+
+.header-img {
+  height: 90px;
+  width: 90px;
+  margin: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--off-white);
+  padding: 15px 25px;
+  display: block;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: rgba(51, 51, 51, 0.7);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--dark-gray);
+  background-color: var(--off-white);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.booking {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: var(--off-white);
+  background-color: var(--black);
+  border: 2px solid var(--black);
+  cursor: pointer;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+  transition: background-color 0.4s ease;
+}
+
+.booking:hover {
+  background-color: var(--off-white);
+  color: var(--dark-gray);
+}
+
+
+/* Footer Section */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 95px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-image: url('../Static/background.webp');
+  background-position: bottom;
+  background-size: cover;
+}
+
+footer p {
+  color: var(--off-white);
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.footer-img {
+  height: 90px;
+  width: 90px;
+  margin: 0;
 }
