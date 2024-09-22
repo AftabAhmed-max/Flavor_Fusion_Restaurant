@@ -1,2 +1,2 @@
-# Little_Lemon_Restaurant
-A website for little lemon restaurant
+# Flavor_Fusion_Restaurant
+A website for Flavor Fusion Restaurant
