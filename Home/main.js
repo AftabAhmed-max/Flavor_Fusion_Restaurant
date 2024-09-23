@@ -1,24 +1,52 @@
 const slides = document.querySelector('.slides');
 const cards = document.querySelectorAll('.card');
+const offerImages = document.querySelectorAll('.offer-img');
 let index = 0;
 
-function autoSlide() {
+// Working of Auto Sliding feature
+
+function updateSlide() {
+  let offset = -index * 100;
+  slides.style.transform = `translateX(${offset}%)`;
+}
+
+function autoSliding() {
+  index++;
+  if (index === cards.length) {
+    index = 0; 
+  } else {
+    updateSlide();
+  }
+}
+
+let slideInterval = setInterval(autoSliding, 3000);
+
+// Working of Pause Feature
+
+offerImages.forEach(image => {
+  image.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  image.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(autoSliding, 3000);
+  });
+});
+
+// Working of Navigation Buttons
+
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+prevButton.addEventListener('click', () => {
+  index--;
+  if (index < 0) {
+    index = cards.length - 1;
+  }
+  updateSlide();
+});
+
+nextButton.addEventListener('click', () => {
   index++;
   if (index === cards.length) {
     index = 0;
   }
-  slides.style.transform = `translateX(${-index * 100}%)`;
-}
-
-let slideInterval = setInterval(autoSlide, 3000);
-slideInterval;
-
-// few problems in caraousel 
-// 1. after goin to 3 it comes backwords to 1
-// 2. need navigation arrows
-
-// js for pasuing the caraousel when the mosue neters 
-// slides.addEventListener('mouseenter', () => clearInterval(slideInterval));
-// slides.addEventListener('mouseleave', () => {
-//   slideInterval = setInterval(autoSlide, 3000);
-// });
+  updateSlide();
+});
