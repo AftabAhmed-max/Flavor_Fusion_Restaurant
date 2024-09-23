@@ -150,25 +150,26 @@ main {
   cursor: pointer;
 }
 
-.prev , .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
+/* Dot Navigation */
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 24px;
-  z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+.dot.active {
+  background-color: var(--off-white); /* Active color */
 }
 
 @media (min-height: 800px) {
