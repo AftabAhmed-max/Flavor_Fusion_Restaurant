@@ -7,7 +7,7 @@
   --black: #000000;
 }
 
-body {
+html,body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,6 +45,11 @@ header {
   height: 90px;
   width: 90px;
   margin: 0;
+}
+
+nav {
+  display: flex;
+  margin-right: -130px;
 }
 
 nav ul {
@@ -92,31 +97,44 @@ nav ul li a:hover {
 }
 
 .booking {
+  margin: 0;
   display: inline-block;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+  padding: 12px 26px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
   background-color: #37bd26;
-  border: 1px solid #79e16c;
-  box-shadow: 0 0 5px #B9D39B;
+  border: 3px solid #79e16c;
   cursor: pointer;
   border-radius: 5px;
   animation: pulse 2s infinite;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease , color 0.4s ease;
+  font-family: 'Lato', sans-serif;
 }
 
 .booking:hover {
-  font-weight: bold;
-  border: 1px solid #B9D39B;
+  font-weight: bolder;
+  border: 3px solid #B9D39B;
   background-color: #79e16c;
   color: #2d2d2d;
 }
 
+  header h1 {
+    display: none;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  .menu-section {
+    display: none;
+  }
+
 /* Main Section */
 
 main {
-  margin-top: 155px;
+  margin-top: 115px;
 }
 
 .slider {
@@ -140,14 +158,38 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: relative;
 }
 
 .card img {
   width: 80%;
-  max-height: 450px;
-  object-fit: fill;
+  max-height: 490px;
+  object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.card h2 {
+  position: absolute;
+  top: 100px;
+  font-size: 45px;
+  color: var(--off-white);
+  background-color: rgba(51, 51, 51, 0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.card p {
+  position: absolute;
+  top: 230px;
+  left: 300px;
+  right: 300px;
+  font-size: 25px;
+  text-align: center;
+  color: var(--off-white);
+  background-color: rgba(51, 51, 51, 0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 /* Dot Navigation */
@@ -183,64 +225,7 @@ main {
 
   .card img {
     width: 80%; 
-    max-height: 60vh; 
-  }
-}
-
-/* Responsive for Mobile */
-
-@media (max-width: 480px) {
-  /* Adjusting header for mobile */
-  header {
-    height: 100px;
-    gap: 50px;
-  }
-
-  .header-img {
-    height: 60px;
-    width: 60px;
-    margin-left: 20px;
-  }
-
-  nav {
-    display: none;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav ul li a {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .booking {
-    display: none;
-  }
-
-  /* Adjusting slider and cards for mobile */
-  .card img {
-    width: 100%; 
-    max-height: 300px; 
-  }
-
-  /* Dot navigation for mobile */
-  .dot {
-    height: 10px;
-    width: 10px;
-  }
-
-  /* Footer adjustments for mobile */
-  footer {
-    height: 75px;
-    gap: 20px;
-  }
-
-  .footer-img {
-    height: 60px;
-    width: 60px;
+    max-height: 65vh; 
   }
 }
 
@@ -273,3 +258,89 @@ footer p {
   width: 90px;
   margin: 0;
 }
+
+/* Styles for max 480px */
+
+@media (max-width: 480px) {
+
+  html,body {
+    background-size: 500%;
+  }
+
+  header {
+  height: 100px;
+  justify-content: center;
+  gap: 40px;
+  background-image: url('../Static/background.webp');
+  background-position: top;
+  background-size: 150%;
+  
+}
+  .header-img {
+    height: 80px;
+    width: 80px;
+
+  }
+
+  header h1 {
+    display: block;
+    font-size: 23px;
+  }
+
+  .fa-bars {
+    display: block;
+    font-size: 20px;
+    color: white;
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .booking  {
+    display: none;
+  }
+
+  .menu-section {
+    display: none;
+    position: absolute;
+    margin: 0;
+    background-color: var(--dark-gray);
+    width: 100%;
+    top: 100px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .menu-section.menu-open {
+    display: block;
+  }
+
+  .menu-section ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .menu-section ul li a{
+    text-decoration: none;
+    padding: 3px 6px;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    color: var(--dark-gray);
+    background-color: var(--off-white);
+    font-weight: bold;
+  }
+
+}
+
+

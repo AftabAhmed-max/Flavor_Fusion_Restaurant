@@ -48,3 +48,17 @@ offerImages.forEach(image => {
     slideInterval = setInterval(autoSliding, 3000);
   });
 });
+
+
+// JS for Mobile Device
+const menubutton = document.querySelector('.fa-bars');
+const menusection = document.querySelector('.menu-section');
+
+menubutton.addEventListener('click', () => {
+  if (menusection.style.display === 'block') {
+    menusection.style.display = 'none';
+  } else {
+    menusection.style.display = 'block'; 
+  }
+});
+
