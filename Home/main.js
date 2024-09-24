@@ -52,7 +52,7 @@ offerImages.forEach(image => {
 
 // JS for Mobile Device
 const menubutton = document.querySelector('.fa-bars');
-const menusection = document.querySelector('.menu-section');
+const menusection = document.querySelector('section.menu-section');
 
 menubutton.addEventListener('click', () => {
   if (menusection.style.display === 'block') {
